@@ -8,6 +8,9 @@ import service.FileWriter;
 public class FileWriterImpl implements FileWriter {
     @Override
     public void write(String data, String fileName) {
+        if (fileName == null || fileName.isEmpty()) {
+            throw new IllegalArgumentException("Invalid file name");
+        }
         try {
             Files.writeString(Path.of(fileName),data);
         } catch (IOException e) {

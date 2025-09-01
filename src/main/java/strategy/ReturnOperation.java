@@ -1,12 +1,12 @@
 package strategy;
 
-import dao.FruitDao;
+import db.Storage;
 import model.FruitTransaction;
 
 public class ReturnOperation implements OperationHandler {
     @Override
-    public void apply(FruitDao fruitDao, FruitTransaction transaction) {
-        int currentQuantity = fruitDao.getQuantity(transaction.getFruit());
-        fruitDao.add(transaction.getFruit(), currentQuantity + transaction.getQuantity());
+    public void apply(FruitTransaction transaction) {
+        int currentQuantity = Storage.getQuantity(transaction.getFruit());
+        Storage.add(transaction.getFruit(), currentQuantity + transaction.getQuantity());
     }
 }

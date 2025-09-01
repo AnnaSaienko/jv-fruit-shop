@@ -10,8 +10,10 @@ public class DataConverterImpl implements DataConverter {
 
     @Override
     public List<FruitTransaction> convertToTransaction(List<String> inputData) {
+        if (!inputData.get(0).matches("^[bprs],[a-zA-Z]+,\\d+$")) {
+            inputData.remove(0);
+        }
         return inputData.stream()
-                .filter(string -> string.matches("^[bprs],[a-zA-Z]+,\\d+$"))
                 .map(parser::parse)
                 .toList();
     }

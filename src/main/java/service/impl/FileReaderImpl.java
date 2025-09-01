@@ -9,6 +9,9 @@ import service.FileReader;
 public class FileReaderImpl implements FileReader {
 
     public List<String> read(String fileName) {
+        if (fileName == null || fileName.isEmpty()) {
+            throw new IllegalArgumentException("Invalid file name");
+        }
         List<String> rawLines;
         try {
             rawLines = Files.readAllLines(Path.of(fileName));

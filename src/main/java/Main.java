@@ -21,8 +21,8 @@ import strategy.ReturnOperation;
 import strategy.SupplyOperation;
 
 public class Main {
-    private static final String READ_FILE_NAME = "reportToRead.csv";
-    private static final String WRITE_FILE_NAME = "finalReport.csv";
+    private static final String READ_FILE_NAME = "src/main/resources/reportToRead.csv";
+    private static final String WRITE_FILE_NAME = "src/main/resources/finalReport.csv";
 
     public static void main(String[] args) {
         FileReader fileReader = new FileReaderImpl();
