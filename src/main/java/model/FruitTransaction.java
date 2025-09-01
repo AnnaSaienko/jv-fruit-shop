@@ -45,7 +45,7 @@ public class FruitTransaction {
                     return o;
                 }
             }
-            return null;
+            throw new IllegalArgumentException("Unknown operation code: " + code);
         }
     }
 }
