@@ -11,6 +11,9 @@ public class FileWriterImpl implements FileWriter {
         if (fileName == null || fileName.isEmpty()) {
             throw new IllegalArgumentException("Invalid file name");
         }
+        if (data == null) {
+            throw new IllegalArgumentException("There is no data for writing");
+        }
         try {
             Files.writeString(Path.of(fileName),data);
         } catch (IOException e) {
