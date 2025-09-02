@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Storage {
-    public static final int DEFAULT_QUANTITY = 0;
     public static final int MIN_QUANTITY = 0;
     private static final Map<String,Integer> fruits = new HashMap<>();
 
@@ -17,10 +16,10 @@ public class Storage {
     }
 
     public static int getQuantity(String fruit) {
-        return fruits.getOrDefault(fruit, DEFAULT_QUANTITY);
+        return fruits.getOrDefault(fruit, MIN_QUANTITY);
     }
 
     public static Map<String, Integer> getAllItems() {
-        return new HashMap<>(fruits);
+        return fruits;
     }
 }
